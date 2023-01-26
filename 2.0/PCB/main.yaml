@@ -10,7 +10,7 @@
   # Jednostki podawane są w milimetrach
 points:                 # points - określa pozycjonowanie slotów na switche
   key:
-    padding: u
+    padding: cy
     footprints:
       choc_hotswap:
         type: choc
@@ -72,6 +72,7 @@ points:                 # points - określa pozycjonowanie slotów na switche
       columns:
         big:
           key:
+            bind: [40, 40]
             stagger: 5
             spread: 2
             rotate: -35
@@ -91,6 +92,28 @@ outlines:
     - what: rectangle
       where: true
       asym: left
+      size: 20
+  cutout:
+    - what: outline
+      name: raw
+      fillet: 1.4
+  keycaps:
+    - what: rectangle
+      where: true
+      asym: left
+      size: [1cx, 1cy]
+  thumb_addon:
+    - what: rectangle
+      size: [40,40]
+  switches_outline:
+    - what: rectangle
+      where: true
+      asym: left
       size: 14
       bound: false
-
+  PCB:
+    - what: outline
+      name: cutout
+    - what: outline
+      name: switches_outline 
+      operation: subtract
